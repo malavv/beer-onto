@@ -1,3 +1,3 @@
 # beer-onto
 
-Standardized Terminology Allowing Web Semantics to Enter the Beer World.
+Beer-Onto is a project devoted to linking beer recipes, styles, and ingredients through the web. It is a standardized vocabulary allowing linked data to enter the beer world.
