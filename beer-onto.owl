@@ -9,6 +9,7 @@
      xmlns:beon="http://purl.obolibrary.org/obo/beer-onto/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/beon/0.1/">
+        <dc:creator>Maxime Lavigne (malavv)</dc:creator>
         <dc:title>Beer Ontology (BeON) vocabulary</dc:title>
         <dc:description>The Beer Ontology brings the world of beer together. Allowing beer software, online tools, and manifacturer to communicate and share resources.</dc:description>
     </owl:Ontology>
@@ -26,6 +27,24 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BjcpCategory -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BjcpCategory"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/hasUnit -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/hasUnit"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/date -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
@@ -35,6 +54,18 @@
     <!-- http://purl.org/dc/elements/1.1/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
     
 
 
@@ -55,12 +86,112 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/beon/0.1/refersToStyle -->
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/fermented -->
 
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/refersToStyle">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/StyleGuide"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerStyle"/>
-    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/fermented"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/hasPart"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/includesCategory -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/includesCategory"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/includesStyle -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/includesStyle"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/maxAbv -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/maxAbv">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/maxSrm -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/maxSrm">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/minAbv -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/minAbv">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/minSrm -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/beon/0.1/minSrm">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
     
 
 
@@ -75,30 +206,243 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/Ale -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/Ale">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/beon/0.1/Beer"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerMeadCiderStyle"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/fermented"/>
+                        <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/TopFermented"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerOrStyleCategory"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/beon/0.1/Beer -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/Beer"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/Beer">
+        <dc:description xml:lang="en">An alcoholic beverage usually made from malted cereal grain (such as barley), flavored with hops, and brewed by slow fermentation.</dc:description>
+        <rdfs:label xml:lang="en">Beer</rdfs:label>
+    </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/beon/0.1/BeerStyle -->
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BeerColor -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerStyle"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerColor">
+        <dc:description xml:lang="en">Describes the perceived color of a beer as measured by some procedure.</dc:description>
+        <rdfs:label xml:lang="en">Color</rdfs:label>
+    </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/beon/0.1/Brewery -->
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BeerFermentation -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/Brewery"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerFermentation">
+        <rdfs:label xml:lang="en">Fermentation/Conditioning</rdfs:label>
+    </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/beon/0.1/StyleGuide -->
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BeerMeadCiderStyle -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/StyleGuide"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerMeadCiderStyle">
+        <dc:description xml:lang="en">Identifies the major characteristic of one type of beer, mead or cider.</dc:description>
+        <rdfs:label xml:lang="en">Style</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BeerOrStyleCategory -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerOrStyleCategory">
+        <rdfs:label xml:lang="en">Category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BeerStrength -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerStrength">
+        <rdfs:label xml:lang="en">Strength</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BeerStyleGuidelines -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerStyleGuidelines">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/StyleGuidelines"/>
+        <rdfs:label xml:lang="en">Beer Style Guidelines</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/Lager -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/Lager">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/beon/0.1/Beer"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BeerMeadCiderStyle"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/fermented"/>
+                        <owl:hasValue rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BottomFermented"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerOrStyleCategory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/StyleGuidelines -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/beon/0.1/StyleGuidelines">
+        <rdfs:label xml:lang="en">Style Guidelines</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/American_Light_Lager -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/American_Light_Lager">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerMeadCiderStyle"/>
+        <fermented rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BottomFermented"/>
+        <maxAbv rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.042</maxAbv>
+        <maxSrm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</maxSrm>
+        <minAbv rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.028</minAbv>
+        <minSrm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</minSrm>
+        <BjcpCategory>1A</BjcpCategory>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BjcpBeerStyleGuidelines2015"/>
+        <rdfs:label xml:lang="en">American Light Lager</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BjcpBeerStyleGuidelines2015 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BjcpBeerStyleGuidelines2015">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerStyleGuidelines"/>
+        <includesCategory rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/StandardAmericanBeer"/>
+        <dc:creator>Gordon Strong</dc:creator>
+        <dc:creator>Kristen England</dc:creator>
+        <dc:date>2015-05</dc:date>
+        <dc:rights>Copyright 2015, BJCP, Inc.</dc:rights>
+        <dc:title>Beer Style Guidelines</dc:title>
+        <rdfs:label>BJCP 2015 Beer Style Guidelines</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BjcpStyleGuidelines2015 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BjcpStyleGuidelines2015">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/StyleGuidelines"/>
+        <hasPart rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BjcpBeerStyleGuidelines2015"/>
+        <dc:date>2015-05</dc:date>
+        <dc:publisher>http://www.bjcp.org</dc:publisher>
+        <dc:title>2015 Style Guidelines</dc:title>
+        <rdfs:label>BJCP 2015 Style Guidelines</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/BottomFermented -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/BottomFermented">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerFermentation"/>
+        <rdfs:label xml:lang="en">bottom-fermented</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/StandardAmericanBeer -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/StandardAmericanBeer">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerOrStyleCategory"/>
+        <includesStyle rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/American_Light_Lager"/>
+        <BjcpCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</BjcpCategory>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BjcpBeerStyleGuidelines2015"/>
+        <rdfs:label xml:lang="en">Standard American Beer</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/StrawColor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/StrawColor">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerColor"/>
+        <maxSrm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</maxSrm>
+        <minSrm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</minSrm>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BjcpBeerStyleGuidelines2015"/>
+        <rdfs:label xml:lang="en">Straw</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/TopFermented -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/TopFermented">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerFermentation"/>
+        <dc:description xml:lang="en">ale yeast</dc:description>
+        <rdfs:label xml:lang="en">top-fermented</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/YellowColor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/YellowColor">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerColor"/>
+        <maxSrm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</maxSrm>
+        <minSrm rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</minSrm>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BjcpBeerStyleGuidelines2015"/>
+        <rdfs:label xml:lang="en">Yellow</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/beon/0.1/session-strength -->
+
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/beon/0.1/session-strength">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BeerStrength"/>
+        <maxAbv rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</maxAbv>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/beon/0.1/BjcpBeerStyleGuidelines2015"/>
+        <rdfs:label xml:lang="en">Session Strength</rdfs:label>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
